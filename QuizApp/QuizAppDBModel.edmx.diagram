@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4470a23a523d43d3a3558efc97a2df57" Name="Diagram1" ZoomLevel="97">
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.Course" Width="1.5" PointX="3" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.Course_Module" Width="1.5" PointX="0.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.Lecture_Module" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.Module" Width="1.5" PointX="0.5" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.Question" Width="1.5" PointX="0.5" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.Result" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.Test" Width="1.5" PointX="3.125" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.User" Width="1.5" PointX="6.25" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SchoolApplicationAppModel.User_Course" Width="1.5" PointX="6.25" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__Course_Mo__Cours__6B24EA82" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__User_Cour__Cours__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__Course_Mo__Modul__6A30C649" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__Lecture_M__Modul__6EF57B66" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__Lecture_M__User___6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__Test__Module_ID__75A278F5" ManuallyRouted="true" >
+          <ConnectorPoint PointX="2" PointY="7.53125" />
+          <ConnectorPoint PointX="3.7367913729960236" PointY="7.53125" />
+          <ConnectorPoint PointX="3.7367913729960236" PointY="6.9623803059895826" />
+          <ConnectorPoint PointX="4.59375" PointY="6.9623803059895826" />
+          <ConnectorPoint PointX="4.59375" PointY="6.6821907552083326" />
+        </AssociationConnector>
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__Question__Test_I__787EE5A0" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__Result__Test_ID__7C4F7684" ManuallyRouted="false" />
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__Result__User_ID__7B5B524B" ManuallyRouted="false" ></AssociationConnector>
+        <AssociationConnector Association="SchoolApplicationAppModel.FK__User_Cour__User___71D1E811" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

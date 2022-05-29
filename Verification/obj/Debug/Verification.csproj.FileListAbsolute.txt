@@ -1,0 +1,12 @@
+D:\2de Semester\3.PROG6212\QuizApp\Verification\obj\Debug\Verification.csprojAssemblyReference.cache
+D:\2de Semester\3.PROG6212\QuizApp\Verification\obj\Debug\Verification.csproj.CoreCompileInputs.cache
+D:\2de Semester\3.PROG6212\QuizApp\Verification\bin\Debug\Verification.dll
+D:\2de Semester\3.PROG6212\QuizApp\Verification\bin\Debug\Verification.pdb
+D:\2de Semester\3.PROG6212\QuizApp\Verification\obj\Debug\Verification.dll
+D:\2de Semester\3.PROG6212\QuizApp\Verification\obj\Debug\Verification.pdb
+E:\QuizApp\Verification\bin\Debug\Verification.dll
+E:\QuizApp\Verification\bin\Debug\Verification.pdb
+E:\QuizApp\Verification\obj\Debug\Verification.csprojAssemblyReference.cache
+E:\QuizApp\Verification\obj\Debug\Verification.csproj.CoreCompileInputs.cache
+E:\QuizApp\Verification\obj\Debug\Verification.dll
+E:\QuizApp\Verification\obj\Debug\Verification.pdb

@@ -1,0 +1,312 @@
+﻿<Window x:Class="QuizApp.UserMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizApp"
+        mc:Ignorable="d"
+        Title="UserMenu" Height="571.249" Width="800" Background="#FF061C29" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closed="Window_Closed" ResizeMode="CanMinimize">
+
+    <Window.Resources>
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Border>
+                            <Grid>
+                                <Grid>
+                                    <Border x:Name="border" 
+                                            CornerRadius="3,3,0,0"
+                                            Background="#FF0E2737" />
+                                </Grid>
+                                <ContentPresenter ContentSource="Header"
+                                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter TargetName="border"
+                                        Property="Background"
+                                        Value="#FF3E8284"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected"
+                                     Value="True">
+                                <Setter TargetName="border"
+                                        Property="Background"
+                                        Value="#FF3E8284"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <TabControl x:Name="tab" HorizontalAlignment="Left" Height="416" Margin="3,118,0,0" VerticalAlignment="Top" Width="786" BorderBrush="Transparent" SelectionChanged="TabControl_SelectionChanged">
+            <TabControl.Background>
+                <ImageBrush/>
+            </TabControl.Background>
+
+            <TabItem x:Name="tiTabItem1" Header="Take Test" FontWeight="Bold" FontSize="16" FontStyle="Italic" BorderBrush="Black" Background="#FF3E8284" BorderThickness="0" Margin="-2,-2,-110,-3" Foreground="White" HorizontalContentAlignment="Center">
+                <Grid Margin="-10,-3,-7,-7" HorizontalAlignment="Left" Width="797">
+                    <Grid.Background>
+                        <ImageBrush/>
+                    </Grid.Background>
+                    <ListBox x:Name="lbTest" ItemsSource="{Binding listTests}" HorizontalAlignment="Left" Height="253" VerticalAlignment="Top" Width="788" FontSize="18" BorderBrush="Transparent" TabIndex="1" IsTabStop="True" Margin="6,68,0,0" ScrollViewer.VerticalScrollBarVisibility="Visible" ScrollViewer.CanContentScroll="True" Foreground="White" Background="#FF0E2737" SelectionChanged="LbTest_SelectionChanged">
+                        <ListBox.Resources>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                            <Border x:Name="Bd"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                Background="{TemplateBinding Background}"
+                                                Padding="{TemplateBinding Padding}"
+                                                SnapsToDevicePixels="true">
+                                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="Selector.IsSelectionActive"
+                                                            Value="False" />
+                                                        <Condition Property="IsSelected"
+                                                            Value="True" />
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background"
+                                                        TargetName="Bd"
+                                                        Value="#FFD35E5A" />
+                                                </MultiTrigger>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="IsMouseOver"
+                                                            Value="True" />
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background"
+                                                        TargetName="Bd"
+                                                        Value="#FFD35E5A" />
+                                                </MultiTrigger>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="Selector.IsSelectionActive"
+                                                            Value="True" />
+                                                        <Condition Property="IsSelected"
+                                                            Value="True" />
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background"
+                                                        TargetName="Bd"
+                                                        Value="#FFD35E5A" />
+                                                </MultiTrigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.Resources>
+                    </ListBox>
+                    <Button x:Name="btnTakeTest" Content="Take Test" HorizontalAlignment="Left" Margin="646,344,0,0" VerticalAlignment="Top" Width="130" Height="32" Click="BtnTakeTest_Click" FontSize="18" TabIndex="4" RenderTransformOrigin="0.1,0.219" BorderBrush="Black" Foreground="White">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#FFD35E5A"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF3E8284"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btnEdit" Content="Edit" HorizontalAlignment="Left" Margin="509,344,0,0" VerticalAlignment="Top" Width="130" Height="32" FontSize="18" TabIndex="4" RenderTransformOrigin="0.1,0.219" BorderBrush="Black" Foreground="White" Click="BtnEdit_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#FFD35E5A"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF3E8284"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                    <Button x:Name="btnPublishStatus" Content="Publish" HorizontalAlignment="Left" Margin="372,344,0,0" VerticalAlignment="Top" Width="130" Height="32" FontSize="18" TabIndex="4" RenderTransformOrigin="0.1,0.219" BorderBrush="Black" Foreground="White" Click="btnPublishStatus_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#FFD35E5A"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF3E8284"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="tiTabItem2" Header="View Marks" FontWeight="Bold" FontSize="16" FontStyle="Italic" BorderBrush="Black" Background="#FF3E8284"  Margin="110,-2,-227,-3" Foreground="White" HorizontalContentAlignment="Center">
+                <Grid Background="#FF061C29" Margin="-11,-3,-5,-11">
+                    <ListBox x:Name="lbResults" ItemsSource="{Binding listResults}" HorizontalAlignment="Left" Height="250" Margin="8,68,0,0" VerticalAlignment="Top" Width="788" BorderBrush="Transparent" Background="#FF0E2737" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Visible" Foreground="White" FontSize="18" SelectionChanged="LbResults_SelectionChanged">
+                        <ListBox.Resources>
+                            <Style TargetType="{x:Type ListBoxItem}">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                            <Border x:Name="Bd"
+                                                BorderBrush="{TemplateBinding BorderBrush}"
+                                                BorderThickness="{TemplateBinding BorderThickness}"
+                                                Background="{TemplateBinding Background}"
+                                                Padding="{TemplateBinding Padding}"
+                                                SnapsToDevicePixels="true">
+                                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                    SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="Selector.IsSelectionActive"
+                                                            Value="False" />
+                                                        <Condition Property="IsSelected"
+                                                            Value="True" />
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background"
+                                                        TargetName="Bd"
+                                                        Value="#FFD35E5A" />
+                                                </MultiTrigger>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="IsMouseOver"
+                                                            Value="True" />
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background"
+                                                        TargetName="Bd"
+                                                        Value="#FFD35E5A" />
+                                                </MultiTrigger>
+                                                <MultiTrigger>
+                                                    <MultiTrigger.Conditions>
+                                                        <Condition Property="Selector.IsSelectionActive"
+                                                            Value="True" />
+                                                        <Condition Property="IsSelected"
+                                                            Value="True" />
+                                                    </MultiTrigger.Conditions>
+                                                    <Setter Property="Background"
+                                                        TargetName="Bd"
+                                                        Value="#FFD35E5A" />
+                                                </MultiTrigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </ListBox.Resources>
+                    </ListBox>
+                    <Button x:Name="btnViewMemo" Content="View Memo" HorizontalAlignment="Left" Margin="646,344,0,0" VerticalAlignment="Top" Width="130" Height="32" FontSize="18" TabIndex="4" RenderTransformOrigin="0.1,0.219" BorderBrush="Black" Foreground="White" Click="BtnViewMemo_Click">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="#FFD35E5A"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF3E8284"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="btnSignOut" Content="Sign Out" HorizontalAlignment="Left" Margin="649,22,0,0" VerticalAlignment="Top" Width="121" Height="29" FontSize="18" TabIndex="4"  RenderTransformOrigin="0.1,0.219" BorderBrush="Black" Foreground="White" Click="BtnSignOut_Click" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFD35E5A"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF3E8284"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="lbLogInDetails" Content="User Name" HorizontalAlignment="Left" Margin="12,58,0,0" VerticalAlignment="Top" Width="312" Foreground="#FFEFE173" FontSize="20"/>
+        <ComboBox x:Name="cbxSearchByTest" HorizontalAlignment="Left" Margin="617,128,0,0" VerticalAlignment="Top" Width="148" Height="28">
+            <ComboBoxItem Content="All Tests" HorizontalAlignment="Left" Width="199"/>
+            <ComboBoxItem Content="Test Name" HorizontalAlignment="Left" Width="199"/>
+            <ComboBoxItem Content="Module" HorizontalAlignment="Left" Width="199"/>
+        </ComboBox>
+        <TextBox x:Name="txbSearchTextTest" HorizontalAlignment="Left" Height="32" Margin="502,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" FontSize="18" Background="#FF3E8284" Foreground="White" BorderBrush="Black" TabIndex="1"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="696,167,0,0" VerticalAlignment="Top" Width="72" Height="30" FontSize="18" TabIndex="4"  RenderTransformOrigin="0.1,0.219" BorderBrush="Black" Foreground="White" Click="BtnSearch_Click">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFD35E5A"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF3E8284"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="lblInfo2" Content="Search By :" HorizontalAlignment="Left" Margin="502,122,0,0" VerticalAlignment="Top" Width="104" Foreground="#FFEFE173" FontSize="20"/>
+        <Label x:Name="lblInfo" Content="School System Application" HorizontalAlignment="Left" Margin="268,6,0,0" VerticalAlignment="Top" Width="290" Panel.ZIndex="3" Foreground="#FFD35E5A" FontSize="22" FontWeight="Bold" FontStyle="Italic" Background="#FF061C29"/>
+
+    </Grid>
+</Window>

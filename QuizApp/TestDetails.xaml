@@ -1,0 +1,66 @@
+﻿<Window x:Class="QuizApp.TestDetails"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizApp"
+        mc:Ignorable="d"
+        Title="TestDetails" Height="463.218" Width="532.177" Background="#FF0E2737" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Closed="Window_Closed" ResizeMode="CanMinimize">
+
+    <Grid>
+        <TextBox x:Name="txbtestTitle" HorizontalAlignment="Left" Height="32" Margin="33,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="451" FontSize="18" Background="#FF3E8284" Foreground="White" BorderBrush="Black" TabIndex="1"/>
+        <Label x:Name="lblInfo0" Content="Enter Test Title : " HorizontalAlignment="Left" Margin="29,78,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="156" Foreground="#FFEFE173"/>
+        <Label x:Name="lblInfo1" Content="Enter Test Discription : " HorizontalAlignment="Left" Margin="31,168,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="214" Foreground="#FFEFE173"/>
+        <RichTextBox x:Name="rtxbTestDesc" HorizontalAlignment="Left" Height="112" Margin="33,214,0,0" VerticalAlignment="Top" Width="457" FontSize="20" Background="#FF3E8284" Foreground="White">
+            <FlowDocument>
+                <Paragraph>
+                    <Run Text=""/>
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button x:Name="btnNext" Content="Next" HorizontalAlignment="Left" Margin="375,368,0,0" VerticalAlignment="Top" Width="120" Height="42" FontSize="20" Foreground="White" Click="BtnNext_Click" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFD35E5A"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF3E8284"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="31,368,0,0" VerticalAlignment="Top" Width="120" Height="42" FontSize="20" Foreground="White" Click="BtnCancel_Click" >
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FFD35E5A"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Background="{TemplateBinding Background}">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF3E8284"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="lblInfo" Content="Select Module :" HorizontalAlignment="Left" Margin="29,28,0,0" VerticalAlignment="Top" FontSize="20" Height="34" Width="156" Foreground="#FFEFE173"/>
+        <ComboBox x:Name="cbxModuleID" HorizontalAlignment="Left" Margin="215,36,0,0" VerticalAlignment="Top" Width="261"/>
+    </Grid>
+</Window>
